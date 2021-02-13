@@ -11,11 +11,11 @@ public class CalculateRates {
   private static final int AFTER_POINT = 4;
 
   public double calculateRate(double endPrice, double price) {
-    return round(((endPrice * ONE_HUNDRED) / price) - ONE_HUNDRED, AFTER_POINT);
+    return ((endPrice * ONE_HUNDRED) / price) - ONE_HUNDRED;
   }
 
   public double calculateAnnualRate(double rate, int restDays) {
-    return round((Math.pow((ONE + rate / ONE_HUNDRED), ((double) ONE_YEAR / (double) restDays)) - ONE) * ONE_HUNDRED, AFTER_POINT);
+    return (Math.pow((ONE + rate / ONE_HUNDRED), ((double) ONE_YEAR / (double) restDays)) - ONE) * ONE_HUNDRED;
   }
 
   private double round(double value, int places) {
